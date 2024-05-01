@@ -1,0 +1,54 @@
+.command {
+    display: inline-block;
+    border: solid black;
+}
+div.command div.logo {
+    background-size: 2em;
+    width: 2em;
+    height: 2em;
+    border: 2px solid black;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+div.command div.result {
+    border: 2px solid black;
+    height: 1em;
+}
+
+div.command div.result.created {
+    background-color: whitesmoke;
+}
+
+div.command div.result.executing {
+    background-color: orange;
+}
+
+div.command div.result.success {
+    background-color: green;
+}
+
+div.command div.result.error {
+    background-color: red;
+}
+
+div.kafka div.logo {
+    background-image: url('icons/kafka.png');
+}
+
+div.hive div.logo {
+    background-image: url('icons/hive.png');
+}
+
+div.schema-registry div.logo {
+    background-image: url('icons/schema-registry.png');
+}
+
+div.spark div.logo {
+    background-image: url('icons/spark.png');
+}
+
+div.connecter div.logo {
+    background-image: url('icons/connecter.png');
+}
