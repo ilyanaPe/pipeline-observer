@@ -1,24 +1,31 @@
 .command {
-    display: inline-block;
+    width: 150px;
     border: solid black;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
+
+p {
+    font-family: Arial;
+}
+
 div.command div.logo {
     background-size: 2em;
     width: 2em;
     height: 2em;
-    border: 2px solid black;
-    margin: 0;
-    padding: 0;
-    display: block;
+    border: none;
+    margin-top: 2px;
+    margin-left: 2px;
 }
 
 div.command div.result {
-    border: 2px solid black;
+    margin-bottom: 3px;
     height: 1em;
 }
 
 div.command div.result.created {
-    background-color: whitesmoke;
+    background-color: rgb(27, 102, 233);
 }
 
 div.command div.result.executing {
@@ -30,7 +37,7 @@ div.command div.result.success {
 }
 
 div.command div.result.error {
-    background-color: red;
+    background-color: rgb(192, 60, 60);
 }
 
 div.kafka div.logo {
