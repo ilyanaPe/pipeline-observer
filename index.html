@@ -1,69 +1,158 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Pipeline observer</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    
-<div class="command kafka">
-    <div class="logo"></div>
-    <p class="name">AddTopic</p>
-    <div class="result created"></div>
-</div>
-<div class="command kafka">
-    <div class="logo"></div>
-    <p class="name">AddGarbageTopic</p>
-    <div class="result executing"></div>
-</div>
+    <div class="table">
+        <div class="zero-level">
+            <div class="command pipeline">
+                <div class="logo"></div>
+                <div class="command-action">
+                    <p>Add Pipeline</p>
+                </div>
+                <div class="result success">SUCCESS</div>
+            </div>
+        </div>
 
-<div class="command hive">
-    <div class="logo"></div>
-    <p class="name">AddTable</p>
-    <div class="result success"></div>
-</div>
+        <div class="first-level">
+            <div class="command schema-registry">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Schema Registry</p>
+                </div>
+                <p class="action">Init</p>
+                <div class="result success">SUCCESS</div>
+            </div>
+            <div class="command kafka">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Kafka</p>
+                </div>
+                <p class="action">Init</p>
+                <div class="result executing">EXECUTING</div>
+            </div>
+            <div class="command trino">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Trino</p>
+                </div>
+                <p class="action">Init</p>
+                <div class="result created">CREATED</div>
+            </div>
+        </div>
 
-<div class="command schema-registry">
-    <div class="logo"></div>
-    <p class="name">AddSchemaRegistry</p>
-    <div class="result success"></div>
-</div>
+        <div class="second-level">
+            <div class="command schema-registry">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Schema Registry</p>
+                </div>
+                <p class="action">Add Schema Registry</p>
+                <div class="result success">SUCCESS</div>
+            </div>
+            <div class="command kafka">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Kafka</p>
+                </div>
+                <p class="action">Add Topic</p>
+                <div class="result created">CREATED</div>
+            </div>
+            <div class="command kafka">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Kafka</p>
+                </div>
+                <p class="action">Add  Garbage Topic</p>
+                <div class="result executing">EXECUTING</div>
+            </div>
+            <div class="command trino">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Trino</p>
+                </div>
+                <p class="action">QeryRunner</p>
+                <div class="result success">SUCCESS</div>
+            </div>
+        </div>
 
-<div class="command spark">
-    <div class="logo"></div>
-    <p class="name">AddSpark</p>
-    <div class="result created"></div>
-</div>
+        <div class="third-level">
+            <div class="command connector">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Connector</p>
+                </div>
+                <p class="action">Init</p>
+                <div class="result error">ERROR</div>
+            </div>
+            <div class="command spark">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Spark</p>
+                </div>
+                <p class="action">Init</p>
+                <div class="result created">CREATED</div>
+            </div>
+        </div>
 
-<div class="command spark">
-    <div class="logo"></div>
-    <p class="name">CheckReplicaSpark</p>
-    <div class="result error"></div>
-</div>
+        <div class="forth-level">
+            <div class="command connector">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Connector</p>
+                </div>
+                <p class="action">Add Deployment</p>
+                <div class="result success">SUCCESS</div>
+            </div>
+            <div class="command connector">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Connector</p>
+                </div>
+                <p class="action">Add Service</p>
+                <div class="result created">CREATED</div>
+            </div>
+            <div class="command connector">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Connector</p>
+                </div>
+                <p class="action">Add Ingress</p>
+                <div class="result error">ERROR</div>
+            </div>
+            <div class="command spark">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Spark</p>
+                </div>
+                <p class="action">Add Deployment</p>
+                <div class="result created">CREATED</div>
+            </div>
+        </div>
 
-<div class="command connecter">
-    <div class="logo"></div>
-    <p class="name">AddDeployment</p>
-    <div class="result success"></div>
-</div>
-
-<div class="command connecter">
-    <div class="logo"></div>
-    <p class="name">AddService</p>
-    <div class="result success"></div>
-</div>
-
-<div class="command connecter">
-    <div class="logo"></div>
-    <p class="name">AddIngress</p>
-    <div class="result created"></div>
-</div>
-
-<div class="command connecter">
-    <div class="logo"></div>
-    <p class="name">CheckReplicaSet</p>
-    <div class="result error"></div>
-</div>
-
+        <div class="fifth-level">
+            <div class="command connector">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Connector</p>
+                </div>
+                <p class="action">Check Replica Set</p>
+                <div class="result error">ERROR</div>
+            </div>
+            <div class="command spark">
+                <div class="logo"></div>
+                <div class="component">
+                    <p>Spark</p>
+                </div>
+                <p class="action">Check Deployment</p>
+                <div class="result success">SUCCESS</div>
+            </div>
+        </div>
+    </div>
 </body>
-</html> 
+
+</html>
